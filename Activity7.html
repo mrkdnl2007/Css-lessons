@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ACTIVITY 7</title></title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #e6f0ff;
+      color: #003366;
+    }
+
+    header {
+      background-color: #004080;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    nav {
+      background-color: #0059b3;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    nav a {
+      padding: 14px 20px;
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+
+    nav .dropdown {
+      position: relative;
+    }
+
+    nav .dropdown:hover .drop-menu {
+      display: block;
+    }
+
+    .drop-menu {
+      display: none;
+      position: absolute;
+      background-color: #0073e6;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .drop-menu a {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #0073e6;
+      padding-bottom: 5px;
+    }
+    
+    img {
+      width: 200px;
+      height: 200px;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); 
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5); 
+    }
+
+    .code {
+      background-color: #cce0ff;
+      padding: 10px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+
+    .demo-box {
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #99ccff;
+      text-align: center;
+      margin: 10px 0;
+      color:white;
+    }
+    .xsample{ 
+          height:100px;
+          width:100px;
+          background-color:#032C62;
+          position: static;
+          top: 20px;
+          left: 30px;
+          margin:0 auto;
+    }
+    .rounded-box{
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #0F0E72;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .center-text {
+          text-align: center;
+          color: white;
+        }
+    .center-box {
+          width: 200px;
+          margin: 0 auto;
+          background-color: #07307D;
+          padding: 10px;
+          border-radius: 10px;
+        }
+    .inline-box {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: #4da6ff;
+        margin: 5px;
+         }
+    .zindex-example {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+        background-color: #cce6ff;
+        border: 1px solid #3399ff;
+        margin: 0 auto;
+        }
+
+    .sample {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      opacity: 0.8;
+      border: 2px solid #000;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+      margin:0 auto;
+      }
+
+    .box1 {
+      background-color: red;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+}
+
+    .box2 {
+      background-color: green;
+      top: 30px;
+      left: 30px;
+      z-index: 2;
+}
+
+    .box3 {
+      background-color: blue;
+      top: 50px;
+      left: 50px;
+      z-index: 3;
+}
+    .transparent-box {
+    width: 100px;
+    height: 100px;
+    background-color: #0099cc;
+    opacity: 0.2;
+    margin: 0 auto;
+    display: inline-block;
+        }
+    .transparent {
+    width: 100px;
+    height: 100px;
+    background-color: #0099cc;
+    opacity: 0.5;
+    margin: 0 auto;
+    display: inline-block;
+        }
+    .transpa {
+    width: 100px;
+    height: 100px;
+    background-color: #0099cc;
+    opacity: 1;
+    margin: 0 auto;
+    display: inline-block;#42445A
+        }
+    .enemberlu{
+          display: flex;
+          justify-content: space-around;
+        }
+        .enemberlu a:hover {
+          background-color:#1A1981;
+        }
+    .transition-box {
+          width: 100px;
+          height: 100px;
+          margin:0 auto;
+          background-color: #3399ff;
+          transition: background-color 0.5s ease;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: inline-block;
+          border-radius: 50px;
+        }
+
+        .transition-box:hover {
+          background-color: #003366;
+          height:100px;
+          width: 100px;
+          margin 0 auto;
+        transform: scale(1.05)
+        }
+        
+    .transition {
+          width: 100px;
+          height: 100px;
+          margin:0 auto;
+          background-color: #3399ff;
+          transition: background-color 0.5s ease;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: inline-block;
+          border-radius: 50px;
+        }
+
+        .transition:hover {
+          background-color: #1E4970;
+          height:100px;
+          width: 100px;
+          margin 0 auto;
+        transform: scale(1.05)
+        }
+        
+    .trans {
+          width: 100px;
+          height: 100px;
+          margin:0 auto;
+          background-color: #3399ff;
+          transition: background-color 0.5s ease;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: inline-block;
+          border-radius: 50px;
+        }
+
+        .trans:hover {
+          background-color: #547CA1;
+          height:100px;
+          width: 100px;
+          margin 0 auto;
+        transform: scale(1.05)
+        }
+        
+    .animated-box {width: 100px;
+      height: 100px;
+      background-color: #3399ff;
+      margin: 0 auto;
+      border-radius: 15px;
+      animation: floatBox 2s infinite alternate;
+      
+    }
+    
+    @keyframes floatBox {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100%); }
+    }
+
+    footer {
+      text-align: center;
+      background-color: #004080;
+      color: white;
+      padding: 10px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>•CSS LESSONS•</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <div class="dropdown">
+      <a href="#">Topics</a>
+      <div class="drop-menu">
+        <a href="#position">Position</a>
+        <a href="#zindex">Z-Index</a>
+        <a href="#inline">Inline Block</a>
+        <a href="#align">Align</a>
+        <a href="#opacity">Opacity</a>
+        <a href="#navbar">Navigation Bar</a>
+        <a href="#gallery">Image Gallery</a>
+        <a href="#rounded">Rounded Corners</a>
+        <a href="#transition">Transitions</a>
+        <a href="#animation">Animations</a>
+      </div>
+    </div>
+    <a href="#about">About</a>
+  </nav>
+
+  <div class="container">
+    <section id="position">
+      <h2>Position</h2>
+      <p>The <code>position</code> property specifies the type of positioning method used for an element. It can have values like <code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code>, and <code>sticky</code>.</p>
+      <div class="code">
+        div {<br>
+          position: static;<br>
+          top: 20px;<br>
+          left: 30px;<br>
+        }
+      </div>
+      <div class="demo-box">
+        <div class="xsample"></div>
+      </div>
+    </section>
+
+    <section id="zindex">
+      <h2>Z-Index</h2>
+      <p>The <code>z-index</code> property specifies the stack order of an element. An element with a greater <code>z-index</code> value will be displayed in front of elements with lower values. Note that <code>z-index</code> only works on positioned elements (those with a position value other than <code>static</code>).</p>
+      <div class="code">
+        .box1 {<br>
+          position: relative;<br>
+          z-index: 1;<br>
+        }<br>
+        .box2 {<br>
+          position: relative;<br>
+          z-index: 2;<br>
+        }<br>
+        .box3 {<br>
+          position: relative;<br>
+          z-index: 3;<br>
+        }
+      </div>
+      <div class="demo-box">
+  <div class="demo-box zindex-example">
+  <div class="sample box1">Box 1</div>
+  <div class="sample box2">Box 2</div>
+  <div class="sample box3">Box 3</div>
+</div>
+    </section>
+
+    <section id="inline">
+      <h2>Inline Block</h2>
+      <p>Setting an element's display property to <code>inline-block</code> allows it to sit next to other elements while retainin block-level features like setting width, height, and margins.</p>
+      <div class="code">
+        .inline-box {<br>
+          display: inline-block;<br>
+          width: 100px;<br>
+          height: 100px;<br>
+          background-color: #4da6ff;<br>
+          margin: 5px;<br>
+        }
+      </div>
+      <div class="demo-box">
+        <div class="inline-box"></div>
+        <div class="inline-box"></div>
+         <div class="inline-box"></div>
+      </div>
+    </section>
+
+    <section id="align">
+      <h2>Align</h2>
+      <p>CSS alignment can be done in different ways using properties like <code>text-align</code>, <code>vertical-align</code>, and <code>margin</code> auto for centering elements.</p>
+      <div class="code">
+        .center-text {<br>
+          text-align: center;<br>
+        }<br>
+        .center-box {<br>
+          width: 200px;<br>
+          margin: 0 auto;<br>
+          background-color: #b3d9ff;<br>
+          padding: 10px;<br>
+        }<br>
+      </div>
+      <div class="demo-box">
+      <div class="center-text">
+        <div class="center-box">I'm centered!</div>
+      </div>
+      </div>
+    </section>
+
+    <section id="opacity">
+      <h2>Opacity</h2>
+      <p>The <code>opacity</code> property controls the transparency of an element. The value ranges from 0 (fully transparent) to 1 (fully opaque).</p>
+      <div class="code">
+        .transparent-box {<br>
+          width: 100px;<br>
+          height: 100px;<br>
+          background-color: #0099cc;<br>
+          opacity: 0.5;<br>
+        }
+      </div>
+      <div class="demo-box">
+      <div class="transparent-box"><p>Opacity 0.2</p></div>
+      <div class="transparent"><p>Opacity 0.5</p></div>
+      <div class="transpa"><p>Opacity 1</p></div>
+      </div>
+    </section>
+
+    <section id="navbar">
+      <h2>Navigation Bar</h2>
+      <p>A navigation bar helps users navigate your site. It can be styled horizontally or vertically using Flexbox or float, and enhanced with hover effects and dropdowns.</p>
+      <div class="code">
+        nav {<br>
+          display: flex;<br>
+          justify-content: space-around;<br>
+        }<br>
+        nav a:hover {<br>
+          background-color: #0066cc;<br>
+        }
+      </div>
+      <div class="demo-box">
+        <div class="enemberlu">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Image Gallery</h2>
+      <p>An image gallery is a group of images styled together. You can use CSS Grid or Flexbox to lay them out responsively.</p>
+      <div class="code">
+        .gallery {<br>
+          display: flex;<br>
+          flex-wrap: wrap;<br>
+          gap: 10px;<br>
+        }<br>
+        .gallery img {<br>
+          width: 150px;<br>
+          height: auto;<br>
+          border-radius: 8px;<br>
+        }
+      </div>
+      <div class="demo-box">
+     <div style="text-align: center;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSizCyzDJ2-4L6oMoePYnyK81a9DrOab4Dgmg&s" alt="Image 1">
+  <p>He is Ginie from "Aladdin".</p>
+</div>
+<div style="text-align: center;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtP7MtPtMFerMEsXDIOKGWnwHsVOcMJRelzw&s" alt="Image 2">
+  <p>This is the Blue character in "Among Us"</p>
+</div>
+<div style="text-align: center;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWALoYXDLBYFwsxSR0V73aJmLy8fLJQxb4DA&s" alt="Image 3">
+  <p>He is Sonic from "Sonic the Hedgehog". </p>
+</div>
+      </div>
+    </section>
+
+    <section id="rounded">
+      <h2>Rounded Corners</h2>
+      <p>Use <code>border-radius</code> to make corners rounded. You can apply it to any element with borders or backgrounds.</p>
+      <div class="code">
+        .rounded-box {<br>
+          border-radius: 15px;<br>
+          background-color: #cce6ff;<br>
+          padding: 10px;<br>
+        }
+      </div>
+      <div class="demo-box">
+      <div class="rounded-box">This box has rounded corners!</div>
+      </div>
+    </section>
+
+    <section id="transition">
+      <h2>CSS Transitions</h2>
+      <p>Transitions allow you to change property values smoothly over a duration. Commonly used for hover effects and animations.</p>
+      <div class="code">
+        .transition-box {<br>
+          width: 100px;<br>
+          height: 100px;<br>
+          background-color:#3399ff;<br>
+          transition: background-color 0.5s ease;<br>
+        }<br>
+
+        .transition-box:hover {<br>
+          background-color: #003366;<br>
+        }
+      </div>
+      <div class="demo-box">
+      <div class="trans"></div>
+      <div class="transition"></div>
+      <div class="transition-box"></div>
+      </div>
+    </section>
+
+    <section id="animation">
+      <h2>CSS Animations</h2>
+      <p>Animations let elements change styles over time. Use <code>@keyframes</code> to define the animation behavior.</p>
+      <div class="code">
+        @keyframes floatbox {<br>
+          0% { transform: translateX(-100%); }<br>
+          100% { transform: translateX(100%); }<br>
+        }
+        .animated-box {<br>
+          animation: moveUpDown 2s infinite;<br>
+        }
+      </div>
+      <div class="demo-box">
+      <div class="animated-box"></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>This page was made a for students and for basic beginners.For educational purposes only!!NO TO PLAGIARISM!</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>Presented by:<a href="https://www.facebook.com/share/16FBYWG6cP/">Mark Daniel Rapanan</a>.<br>Alright reserved © 2025</p>
+  </footer>
+
+  <script>
+    window.onclick = function(e) {
+      const dropdown = document.querySelector(".drop-menu");
+      if (!e.target.matches('.dropdown > a')) {
+        if (dropdown && dropdown.style.display === "block") {
+          dropdown.style.display = "none";
+        }
+      }
+    };
+
+    document.querySelector(".dropdown").addEventListener("mouseenter", () => {
+      document.querySelector(".drop-menu").style.display = "block";
+    });
+
+    document.querySelector(".dropdown").addEventListener("mouseleave", () => {
+      document.querySelector(".drop-menu").style.display = "none";
+    });
+  </script>
+</body>
+</html>
